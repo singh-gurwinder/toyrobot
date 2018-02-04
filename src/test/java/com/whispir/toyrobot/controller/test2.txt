@@ -1,0 +1,24 @@
+* Lines that start with * are comments and not executed.
+* REPORT command must be followed by OUTPUT to set expected
+* result of the REPORT command. MOVE, LEFT, RIGHT before
+* PLACE will be ignored. REPORT will result as 'Robot not placed on table.'
+* Grid size is 5x5 with 0,0 at SouthWest and 4,4 at NorthEast
+MOVE
+MOVE
+LEFT
+MOVE
+RIGHT
+REPORT
+OUTPUT: Robot not placed on table.
+PLACE 3,2,WEST
+LEFT
+MOVE
+RIGHT
+MOVE
+MOVE
+MOVE
+* Next move shall be ignored to avoid falling of tabletop
+MOVE
+RIGHT
+REPORT
+OUTPUT: 0,1,NORTH
